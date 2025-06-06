@@ -1,35 +1,33 @@
+"use client"
+
 import { useMemo } from "react";
-import { readFile } from "fs/promises";
-import path from "path";
+import { motion } from "framer-motion";
 
 import { useAnimation } from "@/hooks/useAnimation";
+import { Hero, AboutUs, ContactHome } from "@/components";
 
-export default async function Home() {
+export default function Home() {
   const { itemVariations } = useAnimation();
 
-  const filePath = path.join(process.cwd(), "data", "data.json");
-  const jsonData = await readFile(filePath, "utf-8");
-  const projects = JSON.parse(jsonData).data.projects;
-
-  // const titleContent = useMemo(
-  //   () => (
-  //     <>
-  //       <motion.span variants={itemVariations}>Choose </motion.span>
-  //       <motion.span variants={itemVariations}>Your</motion.span>
-  //       <motion.span variants={itemVariations}>Growth</motion.span>
-  //     </>
-  //   ),
-  //   []
-  // );
+  const titleContent = useMemo(
+    () => (
+      <>
+        <motion.span variants={itemVariations}>Choose </motion.span>
+        <motion.span variants={itemVariations}>Your</motion.span>
+        <motion.span variants={itemVariations}>Growth</motion.span>
+      </>
+    ),
+    []
+  );
   return (
     <>
-      {/* <Hero
+      <Hero
         description="We are a dynamic development agency buzzing with creativity, transforming your digital dreams into reality."
         titleContent={titleContent}
-      /> */}
+      />
       {/* <Projects projects={projects} isHome /> */}
-      {/* <AboutUs />
-      <Contact /> */}
+      <AboutUs />
+      <ContactHome />
     </>
   );
 }

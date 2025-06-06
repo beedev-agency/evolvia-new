@@ -1,0 +1,51 @@
+.ribon {
+    font-size: 15vw;
+    color: #202020;
+}
+
+.title {
+    font-size: 7vw;
+    letter-spacing: 5px;
+}
+
+.chyron {
+    --gap: 1rem;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--gap);
+    padding: 24px 0;
+    font-size: 20vw;
+    z-index: 0;
+}
+
+  .chyron .chyronInner {
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+    gap: var(--gap);
+    animation: scroll 300s linear infinite;
+    letter-spacing: 15px;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .title {
+      font-size: 9vw;
+      letter-spacing: 2px;
+    }
+    .chyron {
+      font-size: 48vw;
+    }
+  }
