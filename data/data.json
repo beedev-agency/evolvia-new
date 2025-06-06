@@ -1,0 +1,200 @@
+{
+    "data": {
+      "projects": [
+        {
+          "name": "Rand",
+          "surName": "Boats",
+          "url": "rand",
+          "link": "/projects/rand",
+          "type": "Web App",
+          "client": "Rand",
+          "image": "/rand.jpg",
+          "shortName": "RB",
+          "video": "/rand.mov",
+          "heroImage": "/rand.jpeg",
+          "small_desc": "The future of boating. RAND Boats is a pioneering producer of innovative and modern sportsboats.",
+          "aboutProject": {
+            "ourRoles": [
+              { "name": "UX & UI Design" },
+              { "name": "Web Development" },
+              { "name": "CMS Setup" },
+              { "name": "Web Analytics" },
+              { "name": "Consulting" }
+            ],
+            "description": [
+              "RAND Boats is a pioneering producer of innovative and modern sportsboats. ",
+              "Founded and based in Copenhagen, Denmark, with deep roots in Scandinavian design and Danish craftsmanship, RAND Boats focuses on creating and bringing to market the most innovative, intuitive, and socially oriented products across boating segments."
+            ],
+            "title": "THE FUTURE OF BOATING",
+            "url": "https://www.randboats.ca/"
+          },
+          "strategy": {
+            "name": "Strategy",
+            "title": "Summarize the strategy description, emphasizing the importance of the proposed goals.",
+            "description": [
+              "We began the strategy phase of the project by identifying pain points and core offerings, conducting in-depth interviews with key stakeholders including Rand CEO.",
+              "We proposed several core goals for the project, including enhanced site performance, easily navigable content."
+            ]
+          },
+          "inventory": {
+            "name": "Inventory",
+            "title": "Explore Limitless Possibilities.",
+            "description": "We've prioritized a seamless and intuitive user interface. Navigation is straightforward, ensuring that even first-time users can effortlessly explore boat inventory.",
+            "video": "/configurator.mov"
+          },
+          "custom": {
+            "name": "Boat Configurator",
+            "title": "Your Premier Destination for Boating Enthusiasts.",
+            "description": "With our intuitive and user-friendly Boat Configurator, you have the power to customize every aspect of your boat. From choosing the right hull type and size to selecting the perfect engine, interior layout, and luxurious accessories, the possibilities are endless. Create a boat that's as unique as you are, tailored to your specific needs and preferences.",
+            "video": "/inventory.mov"
+          },
+          "design": {
+            "name": "Design",
+            "title": "Responsive Layout",
+            "description": [
+              "Our collaborative effort with Rand resulted in a distinctive and exciting visual identity. It captures the essence of innovation and creativity while maintaining a professional demeanor.",
+              "We've incorporated modern and elegant typography that exudes sophistication and readability. This choice reflects our commitment to presenting content with clarity and style."
+            ]
+          },
+          "resImages": ["/pozResOne.png", "/pozResTwo.png", "/pozResThree.png"],
+          "technology": [
+            {
+              "name": "NextJS",
+              "title": "Take advantage of these benefits and streamline your web projects",
+              "description": [
+                "Choosing Next.js for your web development projects because it offers improved performance, SEO optimization, and a great developer experience",
+                "With versatile data fetching, scalability, and future-proof technology, it streamlines development while delivering fast, SEO-friendly web applications."
+              ]
+            },
+            {
+              "name": "Strapi",
+              "title": "Manage Any Content.",
+              "description": [
+                "We considered using Strapi for your content management needs because it offers a highly flexible and open-source headless CMS solution.",
+                "Strapi empowers developers to create and customize content-rich applications with ease, providing a user-friendly admin panel, robust APIs, and extensive plugin support, making it an excellent choice for building scalable and tailored content-driven experiences."
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Zone Marine",
+          "surName": "Boats",
+          "url": "zone-marine",
+          "link": "/projects/zone-marine",
+          "type": "WebSite",
+          "client": "Veni",
+          "image": "/zone-hero.png",
+          "shortName": "ZM",
+          "video": "/zone/zone.mov",
+          "heroImage": "/zonemarine.jpg",
+          "small_desc": "The future of boating. RAND Boats is a pioneering producer of innovative and modern sportsboats.",
+          "aboutProject": {
+            "ourRoles": [
+              { "name": "UX & UI Design" },
+              { "name": "Web Development" },
+              { "name": "CMS Setup" },
+              { "name": "Web Analytics" },
+              { "name": "Consulting" }
+            ],
+            "description": [
+              "RAND Boats is a pioneering producer of innovative and modern sportsboats. ",
+              "Founded and based in Copenhagen, Denmark, with deep roots in Scandinavian design and Danish craftsmanship, RAND Boats focuses on creating and bringing to market the most innovative, intuitive, and socially oriented products across boating segments."
+            ],
+            "title": "THE FUTURE OF BOATING",
+            "url": "https://www.randboats.ca/"
+          },
+          "strategy": {
+            "name": "Strategy",
+            "title": "Summarize the strategy description, emphasizing the importance of the proposed goals.",
+            "description": [
+              "We began the strategy phase of the project by identifying pain points and core offerings, conducting in-depth interviews with key stakeholders including Rand CEO.",
+              "We proposed several core goals for the project, including enhanced site performance, easily navigable content."
+            ]
+          },
+          "custom": {
+            "name": "Boat Configurator",
+            "title": "Your Premier Destination for Boating Enthusiasts.",
+            "description": "With our intuitive and user-friendly Boat Configurator, you have the power to customize every aspect of your boat. From choosing the right hull type and size to selecting the perfect engine, interior layout, and luxurious accessories, the possibilities are endless. Create a boat that's as unique as you are, tailored to your specific needs and preferences.",
+            "video": "/configurator.mov"
+          },
+          "design": {
+            "name": "Design",
+            "title": "Responsive Layout",
+            "description": [
+              "Our collaborative effort with Rand resulted in a distinctive and exciting visual identity. It captures the essence of innovation and creativity while maintaining a professional demeanor.",
+              "We've incorporated modern and elegant typography that exudes sophistication and readability. This choice reflects our commitment to presenting content with clarity and style."
+            ]
+          },
+          "resImages": ["/zone/zone-one.png", "/zone/zone-two.png", "/zone/zone-three.png"],
+          "technology": [
+            {
+              "name": "NextJS",
+              "title": "Take advantage of these benefits and streamline your web projects",
+              "description": [
+                "Choosing Next.js for your web development projects because it offers improved performance, SEO optimization, and a great developer experience",
+                "With versatile data fetching, scalability, and future-proof technology, it streamlines development while delivering fast, SEO-friendly web applications."
+              ]
+            },
+            {
+              "name": "Strapi",
+              "title": "Manage Any Content.",
+              "description": [
+                "We considered using Strapi for your content management needs because it offers a highly flexible and open-source headless CMS solution.",
+                "Strapi empowers developers to create and customize content-rich applications with ease, providing a user-friendly admin panel, robust APIs, and extensive plugin support, making it an excellent choice for building scalable and tailored content-driven experiences."
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Pozitif",
+          "surName": "Shop",
+          "url": "pozitif",
+          "link": "/projects/pozitif",
+          "type": "Webshop",
+          "client": "Pozitif",
+          "image": "/pozitif-cover.jpeg",
+          "shortName": "P",
+          "heroImage": "/pozitif-hero.jpeg",
+          "video": "/pozitif.mp4",
+          "small_desc": "Pozitif best place for shoping trending products. Shopping with us is a breeze, thanks to our user-friendly webshop interface and secure payment options. Our customer support team is always ready to assist you, providing exceptional service and ensuring your shopping experience is seamless and enjoyable.",
+          "aboutProject": {
+            "ourRoles": [{ "name": "UX & UI Design" }, { "name": "Development" }],
+            "description": [
+              "Welcome to Pozitif, the ultimate destination for influencer extraordinaire Dusan Petrovic's handpicked collection of trending products.",
+              "Explore our curated selection, ranging from fashion-forward apparel to cutting-edge gadgets, and discover the perfect items to elevate your style and enhance your lifestyle. Shop with confidence and embrace the positive vibes as you indulge in a seamless online shopping experience with Pozitif."
+            ],
+            "title": "Shop with confidence",
+            "url": "https://www.pozitifbrand.com/"
+          },
+          "strategy": {
+            "name": "Strategy",
+            "title": "A blend of art, technology, and business acumen",
+            "description": [
+              "We began the strategy phase of the project by identifying pain points and core offerings, conducting in-depth interviews with key stakeholders including Pozitif CEO.",
+              "We proposed several core goals for the project, including enhanced site performance, easily navigable content."
+            ]
+          },
+          "design": {
+            "name": "Design",
+            "title": "Bold Aesthetics",
+            "description": [
+              "We worked with Pozitif to create a design style that was distinctive and exciting while still reflecting the company’s professionalism and reputation for quality.",
+              "Combining modern, elegant typography with a contemporary, contrasting dark and light theme, the overall design demonstrated BeeDev commitment to showcasing clients’ unique brand personas."
+            ]
+          },
+          "resImages": ["/pozResOne.png", "/pozResTwo.png", "/pozResThree.png"],
+          "technology": [
+            {
+              "name": "Wordpress",
+              "title": "Bold Aesthetics",
+              "description": [
+                "We worked with Pozitif to create a design style that was distinctive and exciting while still reflecting the company’s professionalism and reputation for quality.",
+                "Combining modern, elegant typography with a contemporary, contrasting dark and light theme, the overall design demonstrated BeeDev commitment to showcasing clients’ unique brand personas."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+  
