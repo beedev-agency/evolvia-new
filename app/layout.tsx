@@ -23,16 +23,14 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const supabase = await createClient();
+ 
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+
 
   return (
     <html lang="en">
       <body className={`${geistSans.className} antialiased`}>
-        <Header user={user} />
+        <Header user={null} />
         {children}
         <Footer />
         <ToastContainer position="bottom-right" />
