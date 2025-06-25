@@ -1,11 +1,8 @@
-// utils/supabase/createClient.ts
-export const runtime = "nodejs";
-
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
 export async function createClient() {
-  const cookieStore = await cookies() // ⛔️ NE treba `await`, `cookies()` NIJE async!
+  const cookieStore = await cookies()
 
   return createServerClient(
     'https://pbjwjgjfjzizpczibxqs.supabase.co',
@@ -20,9 +17,10 @@ export async function createClient() {
             cookiesToSet.forEach(({ name, value, options }) =>
               cookieStore.set(name, value, options)
             )
-          } catch (e) {
-            // Ovo je u redu – kada se koristi iz server komponenti, Next ne dozvoljava pisanje cookies
-            // Middleware će odraditi refresh sesije
+          } catch {
+            // The `setAll` method was called from a Server Component.
+            // This can be ignored if you have middleware refreshing
+            // user sessions.
           }
         },
       },

@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { createClient } from "@/utils/supabase/server";
 
 import { Header, Footer } from "@/components";
+import { redirect } from "next/navigation";
 
 const geistSans = Raleway({
   weight: ["100", "300", "400", "500", "600", "700", "900"],
@@ -23,14 +24,13 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
- 
-
-  
+  const supabase = await createClient();
+  const { data, error } = await supabase.auth.getUser();
 
   return (
     <html lang="en">
       <body className={`${geistSans.className} antialiased`}>
-        <Header user={null} />
+        <Header user={data.user} />
         {children}
         <Footer />
         <ToastContainer position="bottom-right" />
