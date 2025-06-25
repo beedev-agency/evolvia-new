@@ -5,12 +5,7 @@ import { motion } from "framer-motion";
 
 import { Hero, CoursesContent } from "@/components";
 import { useAnimation } from "@/hooks/useAnimation";
-
-interface Course {
-  name: string;
-  description: string;
-  duration: string;
-}
+import { Course } from "@/types";
 
 interface CoursesClientProps {
   courses: Course[];

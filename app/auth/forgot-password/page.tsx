@@ -1,4 +1,3 @@
-"use client";
 
 import { Formik, Form, FormikValues } from "formik";
 import { motion } from "framer-motion";
@@ -40,7 +39,7 @@ export default function ForgotPasswordPage() {
 
   return (
     <main className="container mx-auto px-4 py-8">
-      <article>
+      {/* <article>
         <Formik
           initialValues={{
             email: "",
@@ -86,7 +85,7 @@ export default function ForgotPasswordPage() {
             </Form>
           )}
         </Formik>
-      </article>
+      </article> */}
     </main>
   );
 }
