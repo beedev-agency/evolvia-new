@@ -3,10 +3,9 @@ import { ServicesItem } from "./ServicesItem";
 
 export const servicesData = [
   {
-    title: "Web Development",
+    title: "Grupni koučing za timove / Razvojne radionice (2–3h)",
     description:
-      "Transform your digital vision into reality with our expert web development services. Our team is fully committed to crafting websites that help our clients achieve their business objectives.",
-
+      "Fokusirane, praktične sesije osmišljene prema aktuelnim temama i potrebama konkretnog tima. Radionice se ne recikliraju – pripremaju se u saradnji sa menadžmentom i HR-om i vode se prema dinamici i specifičnostima grupe. Teme uključuju: psihološku otpornost, komunikaciju,upravljanje vremenom, donošenje odluka pod pritiskom i druge relevantne izazove iz industrije.",
     options: [
       "FRONT-END DEVELOPMENT",
       "BACK-END DEVELOPMENT",
@@ -14,33 +13,21 @@ export const servicesData = [
     ],
   },
   {
-    title: "Web Design",
+    title: "Naručeni koučing (6 sesija, strukturisan proces)",
     description:
-      "Unleash your brand's potential, with our tailor made web design solutions. Our skilled designer collaborates closely with you to seamlessly blend practicality and visual appeal resulting in a captivating design that fully represents your brand. Whether you're a startup or an established enterprise we assist you in crafting a lasting impact that resonates with your audience.",
+      "Namenjen zaposlenima u koje kompanija želi dodatno da investira.",
     options: ["CREATIVE DIRECTION", "VISUAL & UI DESIGN", "IDENTITY DESIGN"],
   },
   {
-    title: "Web Analytics",
+    title: "Individualni koučing 1-na-1",
     description:
       "We believe in data driven decision making and we will assist you in setting up your web analytics. By monitoring performance indicators on your website, you'll be equipped with the knowledge to understand your audience on a deeper level identify successful strategies, pinpoint areas, for improvement and ultimately enhance your websites performance while propelling the growth of your business.",
     options: [
-      "E-commerce Tracking",
-      "Audience Insights",
-      "User Behavior Analysis",
+      "Proces počinje trojnim sastankom (HR/nadređeni, zaposleni i kouč) na kome se definišu ciljevi i parametri rasta.",
+      "Slede šest individualnih sesija (svake druge nedelje), sa konkretnim fokusom i praćenjem napretka.",
+      "U središtu je razvoj upravo onih unutrašnjih kapaciteta koji su ključni za efikasnost, stabilnost i lično zadovoljstvo.",
     ],
-  },
-  {
-    title: "Consulting",
-    description:
-      "With our expert consulting services, leverage a strategic roadmap for your online presence. We arm you with strategic insights, whether it's refining your website's usability, bolstering performance, or building a robust digital marketing strategy. We offer the guidance you need to confidently steer your web presence.",
-    options: [
-      "IT Strategy",
-      "System Integration:",
-      "Cybersecurity Consulting",
-      "Infrastructure and Cloud Services",
-      "IT Project Management",
-    ],
-  },
+  }
 ];
 
 export const Services = () => {

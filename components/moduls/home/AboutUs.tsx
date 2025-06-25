@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 
@@ -76,7 +76,7 @@ export const AboutUs = () => {
         </div>
       </motion.div> */}
       <section className="about__area-3">
-        <div className="container pt-[140px] pb-[110px]">
+        <div className="container mx-auto pt-[140px] pb-[110px]">
           <div className="grid grid-cols-12">
             <div className="col-span-12 md:col-span-6">
               <div className="about__img-3">
@@ -95,16 +95,18 @@ export const AboutUs = () => {
             <div className="col-span-12 md:col-span-6">
               <div className="relative z-10">
                 <h2 className="sec-sub-title title-anim text-primary">
-                  Who We Are
+                  Ko stoji iza Evolvie
                 </h2>
               </div>
               <div className="sec-text-wrapper">
                 <h3 className="sec-title title-anim text-primary">
-                  We are BeeDev where ideas have the potential to change the
-                  world. In a world where innovation is the driving force, it's
-                  not enough to simply have great ideas.
+                  Evolvia je nastala kao prirodan spoj mog industrijskog
+                  iskustva i stručnosti u koučingu. Kroz nju želim da doprinesem
+                  rastu pojedinaca, timova i organizacija – ne samo u brojkama,
+                  već u zadovoljstvu, efikasnosti i osećaju lične kompetentnosti
+                  svakog profesionalca.
                 </h3>
-                <RoundedButton link="/about-us" btnText="Explore Us" isSmall />
+                <RoundedButton link="/about-us" btnText="Istraži više" isSmall />
               </div>
             </div>
           </div>

@@ -1,6 +1,15 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const Footer = () => {
+  const pathname = usePathname();
+
+  const showFooter = !pathname.startsWith("/auth");
+
+  if (!showFooter) return null;
+
   return (
     <footer className=" text-white text-base py-10 md:py-20 relative z-0 font-semibold">
       <div className="absolute w-full md:w-[90%] h-full bg-primary top-0 left-0 -z-10"></div>

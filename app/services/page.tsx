@@ -1,42 +1,80 @@
-"use client";
+import { Metadata } from "next";
 
-import { useMemo } from "react";
-import { motion } from "framer-motion";
+import { ContactHome, ServicesHero } from "@/components";
+import { Services } from "@/components/moduls/services/Services";
 
-import { Hero, Services, ContactHome } from "@/components";
+export const metadata: Metadata = {
+  title: "Our Services & Courses | BeeDev - Digital Development Solutions",
+  description:
+    "Explore BeeDev's comprehensive range of digital development services and courses. From web development to digital transformation, we help businesses build their future through innovative solutions.",
+  keywords:
+    "digital development, web development, software solutions, digital transformation, tech courses, programming courses",
+  openGraph: {
+    title: "Our Services & Courses | BeeDev - Digital Development Solutions",
+    description:
+      "Explore BeeDev's comprehensive range of digital development services and courses. From web development to digital transformation, we help businesses build their future through innovative solutions.",
+    type: "website",
+    images: [
+      {
+        url: "/images/services-og.jpg", // Make sure to add this image
+        width: 1200,
+        height: 630,
+        alt: "BeeDev Services and Courses",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Services & Courses | BeeDev",
+    description:
+      "Explore BeeDev's comprehensive range of digital development services and courses.",
+    images: ["/images/services-og.jpg"],
+  },
+};
 
-import { useAnimation } from "@/hooks/useAnimation";
-
-const AboutUs = () => {
-  const { itemVariations } = useAnimation();
-
-  const titleContent = useMemo(
-    () => (
-      <>
-        <motion.span variants={itemVariations}>Building the future</motion.span>
-        <motion.span variants={itemVariations}>of brands by</motion.span>
-        <motion.span variants={itemVariations}>
-          illuminating digital
-        </motion.span>
-        <motion.span variants={itemVariations}>possibilities.</motion.span>
-      </>
-    ),
-    []
-  );
-
+const ServicesPage = () => {
   return (
-    <>
-      <Hero
-          
-          titleContent={titleContent}
-          description="Choose BeeDev as your trusted development partner, and let us create enchanting experiences that leave a lasting impact on your audience. Join us on this digital journey as we push the boundaries of what's possible and transform your ideas into extraordinary realities."
+    <main>
+      <ServicesHero />
+      <section className="relative">
+        <div
+          className="h-[200px] w-full bg-dark my-[-10px]"
+          aria-hidden="true"
         />
-        <div className="h-[200px] w-full bg-dark my-[-10px]" />
         <Services />
-        <div className="hidden md:block h-[100px] md:h-[200px] w-full bg-dark my-[-10px]" />
+      </section>
+
+      <section className="relative">
+        <div
+          className="hidden md:block h-[100px] md:h-[200px] w-full bg-dark my-[-10px]"
+          aria-hidden="true"
+        />
         <ContactHome />
-    </>
+      </section>
+
+      {/* Add structured data for better SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "Our Services & Courses | BeeDev",
+            description:
+              "Explore BeeDev's comprehensive range of digital development services and courses.",
+            publisher: {
+              "@type": "Organization",
+              name: "BeeDev",
+              logo: {
+                "@type": "ImageObject",
+                url: "/images/logo.png", // Make sure to add your logo
+              },
+            },
+          }),
+        }}
+      />
+    </main>
   );
 };
 
-export default AboutUs;
+export default ServicesPage;

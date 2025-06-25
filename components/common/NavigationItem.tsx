@@ -12,7 +12,7 @@ export const NavigationItem = ({ link, name }: { link: string; name: string }) =
   const { itemVariations } = useAnimation();
 
   const linkClasses = classNames(
-    "text-primary text-md font-[600] py-3 md:py-1 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-secondary hover:after:w-full after:transition-all after:duration-300 after:ease-in-out",
+    "text-primary text-md font-[600] flex items-center md:py-1 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-secondary hover:after:w-full after:transition-all after:duration-300 after:ease-in-out",
     {
       "after:w-full": pathname === link,
       "after:w-0": pathname !== link,

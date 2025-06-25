@@ -4,17 +4,17 @@ const aboutContentData = [
   {
     title: "our craft",
     description:
-      "With our expertise and innovative mindset, we embrace every project as an opportunity to create something truly remarkable.",
+      "Evolvia nije još jedan „trening za poneti“ – onaj koji inspiriše na dan, ali već u ponedeljak pada u zaborav. Ovo nije dodatni alat u nizu, već proces koji pomaže ljudima da počnu da koriste ono što već znaju – ali ih nešto u tome zaustavlja.",
   },
   {
     title: "OUR CAPABILITIES",
     description:
-      "Our team of dedicated developers, designers, and technologists are masters of their craft. With meticulous attention to detail and a passion for innovation, we harness the latest technologies and techniques to deliver intuitive apps that empower users and enhance their digital interactions.",
+      " U praksi, to „nešto“ najčešće nisu nedostatak znanja ili veština – već psihološke blokade: unutrašnje barijere, obrasci razmišljanja, nesigurnosti i sumnje koje ostaju neadresirane iako direktno utiču na performanse.", 
   },
   {
     title: "YOUR BRAND",
     description:
-      "So, if you're ready to embark on an extraordinary digital journey, join us at Bee Dev. Let us be your creative partners, your technical wizards, and your dream weavers.",
+      "Svi programi su individualizovani i nastaju u dijalogu sa timovima i rukovodstvom. Nema generičkih rešenja – svaki pristup je kreiran u skladu sa konkretnim izazovima i ciljevima.",
   },
 ];
 
@@ -24,42 +24,57 @@ export const AboutContent = () => {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 relative md:after:absolute md:after:top-0 md:before:absolute md:before:top-20 md:before:left-0 md:before:z-[1] before:bg-primary md:before:h-[1px] before:w-[70%] md:after:left-[5%] md:after:z-[1] py-20 md:py-[150px] after:bg-primary after:h-[70%] after:w-[1px]">
           <h2 className="bg-dark z-10 text-[40px] md:text-[76px] text-secondary md:col-span-3">
-            Who we are
+            Ko stoji iza Evolvie
           </h2>
           <div className="md:col-span-1 "></div>
           <div className="text-primary pt-10 text-[16px] leading-[1.4] md:col-span-2 lg:col-span-1">
             <p>
-              Crafting Digital Excellence from Serbia! At BeeDev, we embody the
-              spirit of a small but dynamic team bursting with big ideas. Our
-              hive is a collective of visionary thinkers, tech enthusiasts, and
-              coding wizards who thrive on transforming concepts into
-              captivating digital landscapes. Our foundation rests on the
-              pillars of collaboration, expertise, and unwavering dedication to
-              turning challenges into triumphs
+              Ja sam Snežana Bošnjaković, magistar farmacije sa više od 10
+              godina iskustva u farmaceutskoj industriji – od terena do
+              menadžerske pozicije. Radila sam kao stručni saradnik, a zatim i
+              kao sales menadžer, vodeći tim i odgovarajući za rezultate u
+              dinamičnom i kompetitivnom okruženju.
             </p>
             <p className="pt-10">
-              Execution is the key that unlocks their true potential. That's
-              where BeeDev comes in. We specialize in taking your ideas and
-              breathing life into them, crafting solutions that transcend
-              expectations and push boundaries.
+              Razumem izazove industrije – ne samo iz teorije, već iz prakse.
+              Razumem pritisak ciljeva, kompleksnost komunikacije sa lekarima i
+              apotekama, ali i svakodnevne dileme sa kojima se suočavaju i
+              saradnici i njihovi lideri.
             </p>
             <p className="pt-10">
-              But we don't stop there. At BeeDev, we believe in pushing the
-              boundaries of what's possible. We're not content with ordinary; we
-              strive for extraordinary. We thrive on challenges and thrive in
-              the face of complexity. We see limitations as opportunities for
-              innovation, and we're not afraid to explore uncharted territories
-              to bring your ideas to life.
+              Upravo u radu sa timom prepoznala sam koliko je razvoj ljudi
+              ključan za dugoročne rezultate. Tu sam pronašla svoju najveću
+              profesionalnu motivaciju – da budem podrška u razvoju potencijala,
+              prevazilaženju unutrašnjih blokada i izgradnji kompetencija koje
+              donose rezultat.
+            </p>
+            <p className="pt-10">
+              Zbog toga sam se dodatno usavršavala u oblasti ličnog razvoja i
+              koučinga, i danas sam{" "}
+              <strong>ISCP Certified Cognitive Behavioural Coach.</strong>
+            </p>
+            <p className="pt-10">
+              <strong>
+                Evolvia je nastala kao prirodan spoj mog industrijskog iskustva
+                i stručnosti u koučingu.
+              </strong>
+              Kroz nju želim da doprinesem rastu pojedinaca, timova i
+              organizacija – ne samo u brojkama, već u zadovoljstvu, efikasnosti
+              i osećaju lične kompetentnosti svakog profesionalca.
             </p>
           </div>
         </div>
       </div>
       <div className="container mx-auto">
-        {aboutContentData.map((item, idx) => (
-          <AboutItem {...item} number={idx} key={idx} />
-        ))}
+        <h2 className="bg-dark z-10 text-[40px] md:text-[76px] text-secondary md:col-span-3 text-center">
+          Kako radimo
+        </h2>
+        <div>
+          {aboutContentData.map((item, idx) => (
+            <AboutItem {...item} number={idx} key={idx} />
+          ))}
+        </div>
       </div>
     </section>
   );
 };
-

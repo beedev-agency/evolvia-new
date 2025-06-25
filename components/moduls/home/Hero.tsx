@@ -20,7 +20,7 @@ export const Hero = ({ titleContent, description }: any) => {
     <motion.section
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ once: true, amount: 0.5 }}
+      viewport={{ once: true, amount: 0.1 }}
       className={wrapperClasses}
     >
       <div className={heroClasses}>

@@ -1,34 +1,44 @@
-"use client"
+"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import classNames from "clsx";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { type User } from "@supabase/supabase-js";
 
-import {MobileHeader} from "./MobileHeader";
+import { MobileHeader } from "./MobileHeader";
 import { NavigationItem } from "./NavigationItem";
+import { MenuDropdown } from "./MenuDropdown";
 
 const menuLinks = [
   {
-    name: "Home",
+    name: "Početna",
     link: "/",
   },
   {
-    name: "About me",
+    name: "O name",
     link: "/about-me",
   },
   {
-    name: "Services",
+    name: "Kursevi",
+    link: "/courses",
+  },
+  {
+    name: "Usluge",
     link: "/services",
   },
   {
-    name: "Contact me",
+    name: "Kontaktiraj nas",
     link: "/contact-me",
   },
 ];
 
-export const Header = () => {
+interface Props {
+  user: User | null;
+}
+
+export const Header = ({ user }: Props) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showHeaderBg, setShowHeaderBg] = useState(true);
 
@@ -84,9 +94,13 @@ export const Header = () => {
           {menuLinks.map((item, idx) => (
             <NavigationItem key={idx} {...item} />
           ))}
-          <motion.li className="!text-white text-md bg-secondary px-3 rounded-full py-3 md:py-1 ">
-            <Link href={"/auth/login"}>Login</Link>
-          </motion.li>
+          {user ? (
+            <MenuDropdown />
+          ) : (
+            <motion.li className="!text-white text-md bg-secondary px-3 rounded-full py-3 md:py-1 ">
+              <Link href={"/auth/login"}>Login</Link>
+            </motion.li>
+          )}
         </motion.ul>
         <div className="flex items-center gap-10 md:hidden">
           <button
@@ -134,7 +148,7 @@ export const Header = () => {
   );
 };
 
-const Line = (props:any) => (
+const Line = (props: any) => (
   <motion.line
     fill="transparent"
     stroke="#fff"

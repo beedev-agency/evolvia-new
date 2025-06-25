@@ -46,7 +46,7 @@ export const LoginForm = () => {
             </div>
             <div className="mt-2 text-sm md:text-sm">
               Forgot your password? {" "}
-              <Link href="/auth/forgot-password" className="text-secondary font-black">
+              <Link href="/auth/forgot-password" className="text-secondary font-bold">
                 Reset it
               </Link>
             </div>

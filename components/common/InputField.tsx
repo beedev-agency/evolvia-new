@@ -1,7 +1,6 @@
 "use client"
-
 import { useField } from "formik";
-import { InputHTMLAttributes, TextareaHTMLAttributes } from "react";
+import { InputHTMLAttributes, TextareaHTMLAttributes, useState } from "react";
 
 import clsx from "clsx";
 
@@ -32,7 +31,7 @@ export const InputField = ({
   });
 
   const inputClasses = clsx(
-    "py-2.5 px-3 rounded-md outline-none w-full h-full text-primary bg-white",
+    "py-2.5 px-3 outline-none w-full h-full text-primary border-b-2 border-primary border-solid",
     {
       [inputClass as string]: inputClass,
       "cursor-not-allowed text-gray": rest.disabled,
@@ -44,7 +43,7 @@ export const InputField = ({
   return (
     <div className={containerClasses} aria-invalid={isInvalid}>
       {label && (
-        <label className="font-semibold text-base mb-2" htmlFor={field.name}>
+        <label className="font-semibold text-base text-secondary mb-2" htmlFor={field.name}>
           {label}
         </label>
       )}

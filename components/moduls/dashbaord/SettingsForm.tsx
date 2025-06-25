@@ -1,16 +1,33 @@
 "use client";
 
+import { Formik, Form, FormikValues } from "formik";
 import { useCallback, useEffect, useState } from "react";
-import { createClient } from "@/utils/supabase/client";
 import { type User } from "@supabase/supabase-js";
+import { toast } from "react-toastify";
 
-export const SettingsForm = async ({ user }: { user: User | null }) => {
+import { createClient } from "@/utils/supabase/client";
+import { InputField, Button } from "@/components";
+
+export const SettingsForm = () => {
   const supabase = createClient();
   const [loading, setLoading] = useState(true);
   const [fullname, setFullname] = useState<string | null>(null);
   const [username, setUsername] = useState<string | null>(null);
   const [website, setWebsite] = useState<string | null>(null);
+  const [user, setUser] = useState<User | null>(null);
   const [avatar_url, setAvatarUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const supabase = createClient();
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      setUser(user);
+    };
+
+    fetchUser();
+  }, []);
 
   const getProfile = useCallback(async () => {
     try {
@@ -18,7 +35,7 @@ export const SettingsForm = async ({ user }: { user: User | null }) => {
 
       const { data, error, status } = await supabase
         .from("profiles")
-        .select(`full_name, username, website`)
+        .select(`full_name, username`)
         .eq("id", user?.id)
         .single();
 
@@ -30,7 +47,6 @@ export const SettingsForm = async ({ user }: { user: User | null }) => {
       if (data) {
         setFullname(data.full_name);
         setUsername(data.username);
-        setWebsite(data.website);
       }
     } catch (error) {
       console.log(error);
@@ -40,93 +56,85 @@ export const SettingsForm = async ({ user }: { user: User | null }) => {
   }, [user, supabase]);
 
   useEffect(() => {
-    getProfile();
+    if (user?.id) {
+      getProfile();
+    }
   }, [user, getProfile]);
 
-  async function updateProfile({
-    username,
-    website,
-    avatar_url,
-  }: {
-    username: string | null;
-    fullname: string | null;
-    website: string | null;
-    avatar_url: string | null;
-  }) {
-    try {
-      setLoading(true);
+  const updateProfile = async (values: FormikValues) => {
+    if (user?.id) {
+      try {
+        setLoading(true);
 
-      const { error } = await supabase.from("profiles").upsert({
-        id: user?.id as string,
-        full_name: fullname,
-        username,
-        website,
-        updated_at: new Date().toISOString(),
-      });
-      if (error) throw error;
-      alert("Profile updated!");
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
+        const { error } = await supabase.from("profiles").upsert({
+          id: user?.id as string,
+          full_name: values.fullname,
+          username: values.username,
+          updated_at: new Date().toISOString(),
+        });
+        if (error) throw error;
+        toast.success("Profile updated");
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
     }
-  }
+  };
 
   return (
-    <div className="form-widget">
-      {/* ... */}
-
-      <div>
-        <label htmlFor="email">Email</label>
-        <input id="email" type="text" value={user?.email} disabled />
-      </div>
-      <div>
-        <label htmlFor="fullName">Full Name</label>
-        <input
-          id="fullName"
-          type="text"
-          value={fullname || ""}
-          onChange={(e) => setFullname(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="username">Username</label>
-        <input
-          id="username"
-          type="text"
-          value={username || ""}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="website">Website</label>
-        <input
-          id="website"
-          type="url"
-          value={website || ""}
-          onChange={(e) => setWebsite(e.target.value)}
-        />
-      </div>
-
-      <div>
-        <button
-          className="button primary block"
-          onClick={() =>
-            updateProfile({ fullname, username, website, avatar_url })
-          }
-          disabled={loading}
-        >
-          {loading ? "Loading ..." : "Update"}
-        </button>
-      </div>
-
-      <div>
-        <form action="/auth/signout" method="post">
-          <button className="button block" type="submit">
-            Sign out
-          </button>
-        </form>
-      </div>
-    </div>
+    <Formik
+      initialValues={{
+        email: user?.email || "",
+        full_name: fullname || "",
+        username: username || "",
+        website: website || "",
+      }}
+      // validationSchema={Yup.object().shape({
+      //   full_name: Yup.string().required('Full name is required')
+      // })}
+      onSubmit={updateProfile}
+      enableReinitialize
+    >
+      {({ values, initialValues, isSubmitting }) => (
+        <Form>
+          <div className="my-8">
+            <h2 className="text-xl mb-4">Login Information</h2>
+            <div className="flex flex-col w-full h-auto bg-light-gray  rounded-[10px] mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="flex flex-col">
+                  <InputField
+                    name="email"
+                    type="email"
+                    label="Email"
+                    inputClass="bg-white"
+                    disabled={true}
+                  />
+                </div>
+                <div>
+                  <InputField
+                    name="full_name"
+                    label="Full Name"
+                    alert="* This name is being used for certificates and reporting"
+                    inputClass="bg-white"
+                  />
+                </div>
+                <div>
+                  <InputField
+                    name="username"
+                    label="Username"
+                    alert="* This name is being used for certificates and reporting"
+                    inputClass="bg-white"
+                  />
+                </div>
+              </div>
+              <div className="flex row justify-end mt-3">
+                <Button variant="secondary" text="Save" type="submit" />
+              </div>
+            </div>
+          </div>
+        </Form>
+      )}
+    </Formik>
   );
 };

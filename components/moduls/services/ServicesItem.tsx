@@ -25,7 +25,7 @@ export const ServicesItem = ({ title, description, options }: Props) => {
       className="text-primary py-12 md:py-20 mt-0"
     >
       <div className="overflow-hidden">
-        <motion.h3 variants={downVariants} className="text-6xl py-8 text-primary">
+        <motion.h3 variants={downVariants} className="text-5xl py-8 text-primary">
           {title}
         </motion.h3>
       </div>

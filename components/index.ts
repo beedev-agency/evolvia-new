@@ -14,3 +14,7 @@ export { Services} from './moduls/services/Services'
 
 export { HeroContact} from './moduls/contact-me/HeroContact'
 export { StartCoaching} from './moduls/contact-me/StartCoaching'
+export { CoursesContent} from './moduls/courses/CoursesContent'
+export { CoursesClient} from './moduls/courses/CoursesClient'
+export { CoursesHero} from './moduls/courses/CoursesHero'
+export { ServicesHero} from './moduls/services/ServicesHero'
