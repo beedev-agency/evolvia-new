@@ -62,13 +62,14 @@ export const SettingsForm = () => {
   }, [user, getProfile]);
 
   const updateProfile = async (values: FormikValues) => {
+    console.log(values)
     if (user?.id) {
       try {
         setLoading(true);
 
         const { error } = await supabase.from("profiles").upsert({
           id: user?.id as string,
-          full_name: values.fullname,
+          full_name: values.full_name,
           username: values.username,
           updated_at: new Date().toISOString(),
         });
